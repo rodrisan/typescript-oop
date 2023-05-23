@@ -14,6 +14,22 @@ export class Animal {
   }
 }
 
+export abstract class Pet {
+  constructor(protected _name: string) {}
+
+  public move() {
+    console.log('Animal moving');
+  }
+
+  public greeting() {
+    return `Hello, I'm ${this._name}`;
+  }
+
+  protected doSth() {
+    console.log('do sth...');
+  }
+}
+
 const nimi = new Animal('Nimi');
 nimi.move();
 console.log(nimi.greeting());
