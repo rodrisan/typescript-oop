@@ -6,18 +6,18 @@ import { Product } from '../models/product.model';
 export class ProductMemoryService {
   private products: Product[] = [];
 
+  getAll(): Product[] {
+    return this.products
+  }
+
   create(data: CreateProductDto): Product {
     const newProduct = {
       ...data,
       id: faker.number.int(),
-      creationAt: faker.date.recent(),
-      updatedAt: faker.date.recent(),
       category: {
         id: data.categoryId,
         name: faker.commerce.department(),
         image: faker.image.url(),
-        creationAt: faker.date.recent(),
-        updatedAt: faker.date.recent(),
       },
     };
     return this.add(newProduct);
