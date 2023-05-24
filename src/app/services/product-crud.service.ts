@@ -1,3 +1,4 @@
+import { validateOrReject } from 'class-validator';
 import { apiUrl } from '../api';
 import { UpdateProductDto } from '../dtos/product.dto';
 import { Product } from '../models/product.model';
@@ -11,6 +12,8 @@ export class ProductCRUDService {
     // permissions
     // logic
     // this.http.anotherRequest(); // Comming from product-http2.service
+
+    // validateOrReject(dto); // using class-validator
     return this.http.update(id, dto);
   }
 }
